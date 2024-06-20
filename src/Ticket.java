@@ -1,13 +1,13 @@
 public class Ticket {
 
     private char row;
-    private int seat;
-    private int price;
+    private int seatNum;
+    private double price;
     Person person;
 
-    public Ticket (char row, int seat, int price,Person person){
+    public Ticket (char row, int seat, double price,Person person){
         this.row = row;
-        this.seat = seat;
+        this.seatNum = seat;
         this.price = price;
         this.person = person;
     }
@@ -16,20 +16,33 @@ public class Ticket {
         return row;
     }
 
-    public void setRow(){
+    public void setRow(char row){
         this.row = row;
     }
 
     public int getSeat(){
-        return seat;
+        return seatNum;
     }
 
-    public void printInfo(){
-        System.out.println("Ticket Info");
-        System.out.println("Row: " + row);
-        System.out.println("Seat: " + seat);
-        System.out.println("Price: " + price);
-        person.printInfo();
+    public void setSeatNum(int seatNum){
+        this.seatNum = seatNum;
     }
 
+    public double getPrice(){
+        return price;
+    }
+
+    public void setPrice(double price){
+        this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return "Ticket{" +
+                "row=" + row +
+                ", seatNum=" + seatNum +
+                ", price=" + price +
+                ", person=" + person +
+                '}';
+    }
 }
